@@ -5,7 +5,7 @@
       <div class='alert alert-<%="#{name}"%>'>
     <a href="#" class="close" data-dismiss="alert">&#215;</a>
 <!-- content_tag basically cretes a div... For more info check out the api.rubyonrails.org  -->
-    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%= content_tag(:div, msg, :id => "flash_#{name}") if msg.is_a?(String) %>
   </div>
 </div>
 <% end %>
