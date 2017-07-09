@@ -11,7 +11,7 @@ end
 def create
   @article = Article.new(article_params)
    if @article.save
-          flash[:notice]= "Article was successfully created"
+          flash[:success]= "Article was successfully created"
           redirect_to article_path(@article)
    else
     #  flash[:alert] = @article.errors.full_messages
@@ -25,7 +25,7 @@ end
 
 def destroy
   @article.destroy
-  flash[:notice] = "Article deleted successfully"
+  flash[:danger] = "Article deleted successfully"
   redirect_to articles_path
 
   #code
@@ -36,7 +36,7 @@ end
 
 def update
  if @article.update(article_params)
-   flash[:notice] = "Article has been successfully updated"
+   flash[:success] = "Article has been successfully updated"
    redirect_to article_path(@article)
  else
    render 'edit'
