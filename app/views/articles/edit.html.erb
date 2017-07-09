@@ -1,5 +1,5 @@
-<h1>Create an article</h1>
-
+<h1>Edit existing article</h1>
+<!-- form_for prefills the database with existing details -->
   <% if @article.errors.any? %>
 <h2> The following errors prevented the article from being created. </h2>
 <ul>
@@ -25,8 +25,6 @@
     <p>
       <%= f.submit %> <br>
       </p>
-
-
 <% end %>
 
-  <%= link_to "Back to articles listing" , articles_path %>
+<%= link_to "Back to articles listing" , articles_path %>
