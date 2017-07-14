@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-has_many :articles
+has_many :articles, dependent: :destroy
+# Whatever articles a user have the entities related to it may also get deleted.
+
 before_save {self.email = email.downcase }
 validates :username , presence: true, uniqueness: {case_sensitive: false} , length: {minimum: 3, maximum: 25}
 
