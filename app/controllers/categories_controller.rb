@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-before_action :require_admin, except: [:index,:show]
+    before_action :require_admin, except: [:index,:show]
       def index
       @categories = Category.paginate( page: params[:page],per_page: 5)
       end
@@ -10,8 +10,9 @@ before_action :require_admin, except: [:index,:show]
 
       def show
          @category = Category.find(params[:id])
-              @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
+         @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
        end
+
       def create
         @category = Category.new(category_params)
           if @category.save
@@ -21,15 +22,27 @@ before_action :require_admin, except: [:index,:show]
           else
                render 'new'
           end
+      end
 
+def edit
+@category = Category.find(params[:id])
+end
 
-  end
+def update
+  @category = Category.find(params[:id])
+       if @category.update(category_params)
+       flash[:success] = "Category name has been successfully updated"
+       redirect_to category_path(@category)
+       else
+       render 'edit'
+       end
+end
 
 
 private
-      def category_params
-      params.require(:category).permit(:name)
-      end
+        def category_params
+        params.require(:category).permit(:name)
+        end
 
         def require_admin
           if !logged_in? || (logged_in? and !current_user.admin?)
