@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :comments
+  mount ActionCable.server => '/cable'
   root 'pages#home'
-resources :articles
+  resources :articles
   get '/about', to: 'pages#about'
-get '/signup',  to: 'users#new'
+  get '/signup',  to: 'users#new'
 
-get '/login',  to: 'sessions#new'
-post 'login', to: 'sessions#create'
-delete 'logout', to: 'sessions#destroy'
-resources :users, except: [:new]
-resources :categories, except: [:delete]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/login',  to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  resources :users, except: [:new]
+  resources :categories, except: [:delete]
 end

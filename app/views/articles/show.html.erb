@@ -48,17 +48,8 @@
 <!-- end of comment forms  -->
 
 <!-- start of comments-->
-
-<h3 class="text-center">All Comments</h3>
-<% @article.comments.each do |comment| %>
-<div class="row">
-  <div class="col-md-5 col-md-offset-4">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <%= comment.content %>
-      </div>
-    </div>
-  </div>
+<div id="comments" data-article-id="<%= @article.id %>">
+  <h3 class="text-center">All Comments</h3>
+<%= render @article.comments %>
 </div>
-<% end %>
 <!-- end of comments-->
