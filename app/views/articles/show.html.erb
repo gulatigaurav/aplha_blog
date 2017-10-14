@@ -23,7 +23,7 @@
 
 <h4 class="center desc"> <strong> Description: </strong>  </h4>
 <hr>
-<%=  simple_format(@article.description) %>
+<%=  markdown(@article.description) %>
 
   <% if @article.categories.any? %>
 
