@@ -1,15 +1,41 @@
+<div class="row">
+  <div class="col-md-9">
 
-<div class="center jumbotron">
-  <h1>ALPHA BLOG</h1>
+    <div class="center jumbotron">
+      <h1>DECODING  <br> RUBY ON RAILS</h1>
 
-  <% if logged_in? %>
-  <%= link_to "Create an Article now", new_article_path ,class: "btn btn-primary btn-large btn-xlarge" %>
-  <% else %>
-  <%= link_to "Sign up now", signup_path ,class: "btn btn-primary btn-large btn-xlarge" %>
-<!-- <%= link_to 'ABOUT PAGE', about_path %> -->
-<!-- <%= image_tag('taxi.png') %> -->
+      <% if logged_in? %>
+      <%= link_to "Create an Article now", new_article_path ,class: "btn btn-primary btn-large btn-xlarge" %>
+      <% else %>
+      <%= link_to "Sign up now", signup_path ,class: "btn btn-primary btn-large btn-xlarge" %>
+    <!-- <%= link_to 'ABOUT PAGE', about_path %> -->
+    <!-- <%= image_tag('taxi.png') %> -->
 
 
-  <% end %>
+      <% end %>
+
+    </div>
+  </div>
+
+<div class="col-md-3">
+  <div class="card hovercard">
+          <div class="cardheader">
+
+          </div>
+          <div class="avatar">
+              <!-- <img alt="" src="https://avatars1.githubusercontent.com/u/11767240?v=3&s=400"> -->
+              <%= image_tag("GAURAVGULATI.jpg") %>
+          </div>
+          <div class="info">
+              <div class="title">
+                <h4>   Creator:   </h4> 
+                  <a target="_blank" href="">Gaurav Gulati</a>
+              </div>
+              <div class="desc">Ruby on Rails Hobbyist</div>
+              <div class="desc"><b>Self Employed</b></div>
+          </div>
+      </div>
+
+</div>
 
 </div>
