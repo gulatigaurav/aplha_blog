@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/search', to: 'main#search'
+
   root 'pages#home'
 resources :articles
   get '/about', to: 'pages#about'
