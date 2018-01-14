@@ -49,7 +49,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 group :production do
-gem 'pg'
+gem 'pg', '~> 1.0'
 gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
