@@ -16,7 +16,7 @@ font-weight: bold;
 .center{
   text-align: center;
 }
-.jumbotron{
+.jumb{
   background-image: asset-url('jumbo-back.png');
   background-size: cover;
   height: 550px;
@@ -349,4 +349,10 @@ footer ul li{
 .card.hovercard .bottom {
     padding: 0 20px;
     margin-bottom: 17px;
+}
+
+.jumb2{
+  background-image: asset-url('about.jpg');
+  background-size: cover;
+  height: 650px;
 }
