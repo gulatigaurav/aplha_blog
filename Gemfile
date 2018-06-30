@@ -1,3 +1,4 @@
+gem 'dotenv-rails', groups: [:development, :test]
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -34,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'# gem 'bcrypt', '~> 3.1.7'# gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
-
+gem 'recaptcha', require: 'recaptcha/rails'
+# gem 'dot_env', '~> 0.0.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

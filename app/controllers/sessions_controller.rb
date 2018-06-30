@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
 
     def  create
      user = User.find_by(email: params[:session][:email].downcase)
-       if user && user.authenticate(params[:session][:password])
+       if user && user.authenticate(params[:session][:password]) && verify_recaptcha(model: @user)
          session[:user_id] = user.id
          flash[:success] = "You have successfully logged in"
            redirect_to user_path(user)
         else
-          flash.now[:danger] = "Enter the correct credentials"
+          flash[:danger] = 'You have not entered the details correctly!'
           render 'new'
         end
 

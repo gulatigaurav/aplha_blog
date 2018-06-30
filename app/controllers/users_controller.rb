@@ -12,11 +12,16 @@ def index
  end
   def create
    @user = User.new(user_params)
-     if @user.save
+
+   # if !verify_recaptcha(model: @user) || !@user.save
+   #       render "new"
+   #     end
+     if @user.save && verify_recaptcha(model: @user)
        session[:user_id]= @user.id
        flash[:success] = "Welcome to Decoding Rails #{@user.username}"
        redirect_to user_path(@user)
      else
+       # flash.now[:danger] = "Make sure you have entered credentials correctly or Confirm not a Robot"
        render 'new'
      end
 
